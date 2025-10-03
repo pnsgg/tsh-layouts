@@ -1,0 +1,38 @@
+<!-- 
+Layout très fortement inspiré par le scoreboard traditionnel Super Smash Bros. Ultimate
+https://github.com/TournamentStreamHelper/TournamentStreamHelper-layouts/blob/main/scoreboard/ssbultimate.html
+sous license MIT
+-->
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script src="../include/globals.js"></script>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+  <div class="phase-match fade">
+    <div class="phase"></div>
+    <div class="bullet">•</div>
+    <div class="match"></div>
+  </div>
+
+  <div class="players">
+    <div class="p1 player container fade_right">
+      <div class="score"></div>
+      <div class="name"></div>
+      <div class="character_container"></div>
+    </div>
+
+    <div class="p2 player container fade_left">
+      <div class="character_container"></div>
+      <div class="name"></div>
+      <div class="score"></div>
+    </div>
+  </div>
+
+  <script src="../scoreboard/index.js"></script>
+</body>
+
+</html>

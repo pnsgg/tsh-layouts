@@ -1,0 +1,10 @@
+# ignore everything so the git repo can be cloned inside TSH/layout
+*
+# only include the "new" relevant files
+!scoreboard-bloombagarre
+!scoreboard-bloombagarre/*
+!include
+!include/BarlowSemiCondensed-Bold.ttf
+!LICENSE
+!.gitignore
+!README-PNS.md
