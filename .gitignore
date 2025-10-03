@@ -7,4 +7,5 @@
 !include/BarlowSemiCondensed-Bold.ttf
 !LICENSE
 !.gitignore
-!README
+!.github
+!.github/*
