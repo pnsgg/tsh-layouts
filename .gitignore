@@ -4,7 +4,7 @@
 !scoreboard-bloombagarre
 !scoreboard-bloombagarre/*
 !include
-!include/BarlowSemiCondensed-Bold.ttf
+!include/InstrumentSans-Variable.ttf
 !LICENSE
 !.gitignore
 !.github
