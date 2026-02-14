@@ -2,7 +2,10 @@
 
 Layouts/dispositions TournamentStreamHelper pour les événements PNS.
 
-Seul le scoreboard pour BloomBagarre est disponible pour le moment, limité à Super Smash Bros. Ultimate en théorie.
+Dispositions :
+- Scoreboard BloomBagarre (`/layout/scoreboard-bloombagarre/index.html`)
+- Scoreboard KanD.I. (`/layout/scoreboard-kandi/index.html`)
+- Commentateurs KanD.I. (`/layout/commentators/kandi.html`)
 
 ## Installation
 
