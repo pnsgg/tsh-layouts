@@ -7,6 +7,8 @@
 !scoreboard-kandi/*
 !include
 !include/InstrumentSans-Variable.ttf
+!commentators
+!commentators/kandi.*
 !LICENSE
 !.gitignore
 !.github
