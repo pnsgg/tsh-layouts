@@ -3,6 +3,8 @@
 # only include the "new" relevant files
 !scoreboard-bloombagarre
 !scoreboard-bloombagarre/*
+!scoreboard-kandi
+!scoreboard-kandi/*
 !include
 !include/InstrumentSans-Variable.ttf
 !LICENSE
