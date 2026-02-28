@@ -1,0 +1,46 @@
+<!--
+Layout très fortement inspiré par le scoreboard traditionnel Super Smash Bros. Ultimate
+https://github.com/TournamentStreamHelper/TournamentStreamHelper-layouts/blob/main/scoreboard/ssbultimate.html
+sous license MIT
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="../include/globals.js"></script>
+    <link rel="stylesheet" href="../scoreboard-bloombagarre/index.css" />
+  </head>
+
+  <body>
+    <div class="players">
+      <div class="joueurs">
+        <div class="p1 player container fade_right">
+          <div class="score"></div>
+          <div class="name"></div>
+          <div class="character_container"></div>
+        </div>
+
+        <svg
+          width="38"
+          height="38"
+          viewBox="0 0 38 38"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        ></svg>
+
+        <div class="p2 player container fade_left">
+          <div class="character_container"></div>
+          <div class="name"></div>
+          <div class="score"></div>
+        </div>
+      </div>
+
+      <div class="phase-match fade">
+        <div class="phase"></div>
+        <div class="bullet">•</div>
+        <div class="match"></div>
+      </div>
+    </div>
+
+    <script src="../scoreboard/index.js"></script>
+  </body>
+</html>

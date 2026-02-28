@@ -3,6 +3,8 @@
 # only include the "new" relevant files
 !scoreboard-bloombagarre
 !scoreboard-bloombagarre/*
+!scoreboard-chandelan
+!scoreboard-chandelan/*
 !scoreboard-kandi
 !scoreboard-kandi/*
 !include
