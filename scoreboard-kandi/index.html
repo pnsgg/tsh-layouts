@@ -11,48 +11,73 @@ sous license MIT
   </head>
 
   <body>
-    <div class="players">
-      <div class="joueurs">
-        <div class="player-wrapper">
-          <div class="p1 player container fade_right">
-            <div class="name"></div>
-            <div class="character_container"></div>
-
-            <div class="p1 chips">
-              <div class="seed chip"></div>
-            </div>
-          </div>
+    <div class="joueurs">
+      <div class="player-wrapper">
+        <div class="p1 player container fade_right">
+          <div class="name"></div>
+          <div class="character_container"></div>
         </div>
 
-        <div class="player-wrapper">
-          <div class="p2 player container fade_left">
-            <div class="character_container"></div>
-            <div class="name"></div>
-          </div>
-        </div>
-
-        <div class="scores">
-          <div class="player container p1">
-            <div class="score"></div>
-          </div>
-
-          <span> - </span>
-
-          <div class="player container p2">
-            <div class="score"></div>
-          </div>
-
+        <div class="p1 chips">
+          <div class="pronoun chip"></div>
           <svg
-            width="96"
-            height="99"
-            viewBox="0 0 96 99"
+            width="10"
+            height="31"
+            viewBox="0 0 6 21"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="chips-divider"
           >
-            <path
-              d="M48 0C74.5097 0 96 21.4903 96 48C96 48.4722 95.9915 48.9428 95.9779 49.4118C95.9915 49.8807 96 50.3513 96 50.8235C96 77.3332 74.5097 98.8235 48 98.8235C21.4903 98.8235 0 77.3332 0 50.8235C0 50.3513 0.00713545 49.8807 0.0206801 49.4118C0.00713545 48.9428 0 48.4722 0 48C0 21.4903 21.4903 0 48 0Z"
-              fill="#1B0015"
-            />
+            <path d="M0 21V0H5.62693L0 21Z" fill="white" />
+          </svg>
+          <div class="seed chip"></div>
+        </div>
+      </div>
+
+      <div class="player-wrapper">
+        <div class="p2 player container fade_left">
+          <div class="character_container"></div>
+          <div class="name"></div>
+        </div>
+        <div class="p2 chips">
+          <div class="pronoun chip"></div>
+          <svg
+            width="10"
+            height="31"
+            viewBox="0 0 6 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="chips-divider"
+          >
+            <path d="M0 21V0H5.62693L0 21Z" fill="white" />
+          </svg>
+          <div class="seed chip"></div>
+        </div>
+      </div>
+
+      <div class="scores">
+        <div class="player container p1">
+          <div class="score"></div>
+        </div>
+
+        <span> - </span>
+
+        <div class="player container p2">
+          <div class="score"></div>
+        </div>
+
+        <svg
+          width="96"
+          height="99"
+          viewBox="0 0 96 99"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M48 0C74.5097 0 96 21.4903 96 48C96 48.4722 95.9915 48.9428 95.9779 49.4118C95.9915 49.8807 96 50.3513 96 50.8235C96 77.3332 74.5097 98.8235 48 98.8235C21.4903 98.8235 0 77.3332 0 50.8235C0 50.3513 0.00713545 49.8807 0.0206801 49.4118C0.00713545 48.9428 0 48.4722 0 48C0 21.4903 21.4903 0 48 0Z"
+            fill="#1B0015"
+          />
+          <g id="arlequin">
             <path
               d="M93.1762 48C93.1762 72.9502 72.95 93.1764 47.9997 93.1764C23.0494 93.1764 2.82324 72.9502 2.82324 48C2.82324 23.0497 23.0494 2.82349 47.9997 2.82349C72.95 2.82349 93.1762 23.0497 93.1762 48Z"
               fill="#FF1B4C"
@@ -81,15 +106,15 @@ sous license MIT
               d="M36.3111 4.35203C39.4922 5.53716 41.883 7.79047 43.6943 10.8192C46.2014 15.0172 47.2872 19.6939 47.9789 24.4853C48.7458 29.793 48.8132 35.1375 48.5784 40.487C48.4752 42.8241 48.355 45.1618 47.9452 47.6496C47.831 47.3987 47.7253 47.168 47.626 46.9515C47.4616 46.5932 47.3135 46.2708 47.1693 45.9472C44.1519 39.2282 40.6639 32.7948 36.1191 27.0155C33.2458 23.3627 30.0598 20.0518 25.9565 17.8261C22.7603 16.0906 19.4188 15.3991 15.8899 16.2223C21.4426 10.6119 28.4553 6.45044 36.3111 4.35203Z"
               fill="#C20A32"
             />
-          </svg>
-        </div>
+          </g>
+        </svg>
       </div>
+    </div>
 
-      <div class="phase-match fade">
-        <div class="phase"></div>
-        <div class="bullet">•</div>
-        <div class="match"></div>
-      </div>
+    <div class="phase-match fade">
+      <div class="phase"></div>
+      <div class="bullet">•</div>
+      <div class="match"></div>
     </div>
 
     <script src="../scoreboard/index.js"></script>

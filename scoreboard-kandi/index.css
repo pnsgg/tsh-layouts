@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: "National Park";
+  font-family: "National Park", cursive;
   opacity: 0;
   overflow: hidden;
   width: 1920px;
@@ -30,24 +30,39 @@ body {
   background-size: cover;
 }
 
-.players {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-
-  left: 50%;
-  top: 40px;
-  position: absolute;
-  transform: translateX(-50%);
-}
-
 .joueurs {
   display: flex;
   align-items: center;
   gap: 72px;
 
-  position: relative;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phase-match {
+  display: inline-flex;
+  gap: 0.5ch;
+  align-items: baseline;
+
+  width: fit-content;
+  padding: 10px 12px;
+
+  font-size: 15px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  background-color: var(--blanc);
+  border: 1px solid var(--noir);
+  box-shadow: 0 2px 0 var(--noir);
+  color: var(--noir);
+  border-radius: 99px;
+
+  position: fixed;
+  top: 80px;
+  right: 50px;
 }
 
 .scores {
@@ -73,21 +88,18 @@ body {
   transform: translateX(-50%);
 }
 
-.phase-match {
-  display: inline-flex;
-  gap: 0.5ch;
-  font-size: 13px;
-  line-height: 1;
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
 
-  width: fit-content;
-  background-color: var(--blanc);
-  border: 1px solid var(--noir);
-  box-shadow: 0 2px 0 var(--noir);
-  color: var(--noir);
-  border-radius: 99px;
-  padding: 6px 8px;
-  text-transform: uppercase;
-  font-weight: 700;
+#arlequin {
+  animation: rotate 60s infinite linear;
+  transform-origin: center;
 }
 
 .player-wrapper > .player.container {
@@ -95,45 +107,25 @@ body {
   align-items: center;
   gap: 6px;
   background-color: var(--blanc);
-  /*border: 1px solid var(--noir);
-  box-shadow: 0 2px 0 var(--noir);*/
+  border: 1px solid var(--noir);
+  box-shadow: 0 2px 0 var(--noir);
   color: var(--noir);
-
-  /*height: fit-content;*/
   padding: 0.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
 }
 
 .player-wrapper {
   position: relative;
   width: 500px;
-  height: 64px;
-  background-color: var(--noir);
-}
-
-.player-wrapper:has(.p1) {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 20px 50%);
 }
 
 .player-wrapper > .player.container.p1 {
-  border-left: 0px;
+  border-left: none;
   padding-right: 24px;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 20px 50%);
-}
-
-.player-wrapper:has(.p2) {
-  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 20px) 50%, 100% 100%, 0% 100%);
 }
 
 .player-wrapper > .player.container.p2 {
-  border-right: 0px;
+  border-right: none;
   padding-left: 24px;
-  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 20px) 50%, 100% 100%, 0% 100%);
 }
 
 .player-wrapper > .player.container > div:not(.score) > .text:not(.text_empty) {
@@ -157,6 +149,72 @@ body {
 
 .p2 .extra {
   flex-direction: row-reverse;
+}
+
+.chips {
+  display: flex;
+
+  background-color: var(--rouge-pns);
+  border: 1px solid var(--noir);
+  box-shadow: 0 2px 0 var(--noir);
+  border-radius: 99px;
+  overflow: hidden;
+
+  font-size: 15px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  position: absolute;
+  top: calc(100% - 5px);
+}
+
+.chip {
+  padding-block: 0.5rem;
+}
+
+.chip.text_empty {
+  padding: 0 !important;
+}
+
+.chip.pronoun {
+  padding-left: 0.75rem;
+  padding-right: 0.5rem;
+  background-color: var(--blanc);
+  color: var(--noir);
+}
+
+.chips-divider {
+  width: 10px;
+  height: 100%;
+  transform: translateX(-1px);
+}
+
+/* si les pronoms ou la seed sont pas donnés, on cache le divider  */
+.chip.pronoun.text_empty + .chips-divider {
+  display: none;
+}
+.chips-divider:has(~ .text_empty) {
+  display: none;
+}
+
+.chip.seed {
+  padding-inline: 0.75rem;
+  background-color: var(--rouge-pns);
+  color: var(--blanc);
+}
+
+/* si pronoms sont définis (et que le divider est là), on réduit l'émargement de la seed */
+.chip.pronoun:not(.text_empty) ~ .chip.seed {
+  padding-left: 0.5rem;
+}
+
+.p1.chips {
+  right: 1.5rem;
+}
+
+.p2.chips {
+  left: 1.5rem;
 }
 
 /*.extra .pronoun {
