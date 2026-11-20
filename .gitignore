@@ -7,8 +7,12 @@
 !scoreboard-chandelan/*
 !scoreboard-kandi
 !scoreboard-kandi/*
+!scoreboard-kandi-nouveau
+!scoreboard-kandi-nouveau/*
 !include
 !include/InstrumentSans-Variable.ttf
+!include/AudioNugget.ttf
+!include/EurostileExtended.ttf
 !commentators
 !commentators/kandi.*
 !LICENSE
