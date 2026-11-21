@@ -61,7 +61,7 @@ body {
   border-radius: 99px;
 
   position: fixed;
-  top: 80px;
+  top: 120px;
   right: 50px;
 }
 
@@ -260,6 +260,7 @@ body {
   height: 24px;
   border-radius: 50%;
   background-color: var(--noir);
+  color: var(--blanc);
 }
 
 /*.chips {

@@ -4,10 +4,23 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Audio Nugget";
+  src: url("../include/AudioNugget.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../include/InstrumentSans-Variable.ttf");
+  font-weight: 100 900;
+}
+
 :root {
   --vert-clair: #E3FFF8;
   --vert-fonce: #008A68;
   --rouge-pns: #ff1b4c;
+  --rouge-pns-75: #C20A32;
   --noir: #1b0015;
   --blanc: #ffffff;
 }
@@ -43,6 +56,14 @@ body {
   transform: translateX(-50%);
 }
 
+img {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
 .phase-match {
   display: inline-flex;
   gap: 0.5ch;
@@ -55,77 +76,52 @@ body {
   line-height: 1;
   text-transform: uppercase;
 
-  background-color: var(--blanc);
-  border: 1px solid var(--noir);
-  box-shadow: 0 2px 0 var(--noir);
+  text-shadow: 3px 0 var(--blanc), -3px 0 var(--blanc), 0 3px var(--blanc), 0 -3px var(--blanc),
+                 2px 2px var(--blanc), -2px -2px var(--blanc), 2px -2px var(--blanc), -2px 2px var(--blanc);
   color: var(--noir);
-  border-radius: 99px;
 
   position: fixed;
-  top: 120px;
-  right: 50px;
-}
-
-.scores {
-  position: absolute;
+  top: 180px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  font-size: 48px;
-  flex-grow: 0;
-  flex-shrink: 0;
+}
+
+.score {
+  font-family: "Audio Nugget";
+  font-size: 100px;
+  position: absolute;
   color: var(--blanc);
-}
-
-.scores > *:not(svg) {
-  z-index: 2;
-}
-
-.scores svg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@keyframes rotate {
-  from {
-    rotate: 0deg;
-  }
-  to {
-    rotate: 360deg;
-  }
-}
-
-#arlequin {
-  animation: rotate 60s infinite linear;
-  transform-origin: center;
-}
-
-.player-wrapper > .player.container {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background-color: var(--blanc);
-  border: 1px solid var(--noir);
-  box-shadow: 0 2px 0 var(--noir);
-  color: var(--noir);
-  padding: 0.5rem;
+  text-shadow: 8px 0 var(--noir), -8px 0 var(--noir), 0 8px var(--noir), 0 -8px var(--noir),
+                 7px 7px var(--noir), -7px -7px var(--noir), 7px -7px var(--noir), -7px 7px var(--noir),
+ 14px 14px 0px var(--rouge-pns);
+                 ;
 }
 
 .player-wrapper {
   position: relative;
-  width: 500px;
+  display: flex;
+  padding: 1rem 4rem;
+  width: 439px;
+  height: 124px;
+  align-items: center;
 }
 
-.player-wrapper > .player.container.p1 {
-  border-left: none;
-  padding-right: 24px;
+.player-wrapper.p1 {
+  justify-content: flex-end;
+  text-align: end;
+  background-image: url("./fond.png");
 }
 
-.player-wrapper > .player.container.p2 {
-  border-right: none;
-  padding-left: 24px;
+.player-wrapper.p2 {
+  background-image: url("./fonddroite.png");
+}
+
+.player-wrapper.p1 .score {
+  left: -70px;
+}
+
+.player-wrapper.p2 .score {
+  right: -70px;
 }
 
 .player-wrapper > .player.container > div:not(.score) > .text:not(.text_empty) {
@@ -139,7 +135,8 @@ body {
 
   overflow: hidden;
   width: 100%;
-  font-size: 34px;
+  font-size: 28px;
+  color: var(--rouge-pns-75);
 }
 
 .p1 .name {
@@ -150,70 +147,14 @@ body {
   flex-direction: row-reverse;
 }
 
-.chips {
-  display: flex;
-
-  background-color: var(--rouge-pns);
-  border: 1px solid var(--noir);
-  box-shadow: 0 2px 0 var(--noir);
-  border-radius: 99px;
-  overflow: hidden;
-
-  font-size: 15px;
-  line-height: 1;
-  text-transform: uppercase;
-
-  position: absolute;
-  top: calc(100% - 5px);
-}
-
-.chip {
-  padding-block: 0.5rem;
-}
-
-.chip.text_empty {
-  padding: 0 !important;
-}
-
-.chip.pronoun {
-  padding-left: 0.75rem;
-  padding-right: 0.5rem;
-  background-color: var(--blanc);
-  color: var(--noir);
-}
-
-.chips-divider {
-  width: 10px;
-  height: 100%;
-  transform: translateX(-1px);
-}
-
 /* si les pronoms ou la seed sont pas donnés, on cache le divider  */
-.chip.pronoun.text_empty + .chips-divider {
+.chip.pronoun.text_empty + .bullet {
   display: none;
 }
-.chips-divider:has(~ .text_empty) {
+.bullet:has(~ .text_empty) {
   display: none;
 }
 
-.chip.seed {
-  padding-inline: 0.75rem;
-  background-color: var(--rouge-pns);
-  color: var(--blanc);
-}
-
-/* si pronoms sont définis (et que le divider est là), on réduit l'émargement de la seed */
-.chip.pronoun:not(.text_empty) ~ .chip.seed {
-  padding-left: 0.5rem;
-}
-
-.p1.chips {
-  right: 1.5rem;
-}
-
-.p2.chips {
-  left: 1.5rem;
-}
 
 /*.extra .pronoun {
   width: 100%;
@@ -228,25 +169,11 @@ body {
   height: 24px;
 }*/
 
-.character_container {
-  height: 100%;
-  flex-shrink: 0;
-  height: 28px;
-  width: 28px;
-}
-
-.character_container > .tsh_character > .tsh-center-image {
-  overflow: hidden;
-  background-size: 28px 28px;
-  height: 28px;
-  width: 28px;
-}
-
-.sponsor {
-  color: var(--rouge-pns);
-  font-size: 26px;
+.sponsor, .chips {
+  font-family: "Instrument Sans";
+  color: var(--noir);
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: -3%;
 }
 
 .losers {
