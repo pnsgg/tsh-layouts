@@ -12,7 +12,7 @@
 !include
 !include/InstrumentSans-Variable.ttf
 !include/AudioNugget.ttf
-!include/EurostileExtended.ttf
+!include/EurostileExtended.woff
 !commentators
 !commentators/kandi.*
 !LICENSE
